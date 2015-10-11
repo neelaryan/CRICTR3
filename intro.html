@@ -4,8 +4,10 @@
 	<title>Intro Animation</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/intro.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/intro.js"></script>
 </head>
 <body>
 	<div id="main" style="height:450px; width:1010px; background-color:#99CCFF; margin-left:auto; margin-right:auto; overflow:hidden">
@@ -41,96 +43,12 @@
 		<div id="cross" style="position:center; margin-top:-400px; margin-left:555px; visibility:hidden">
 			<img src="images/intro/cross.svg" style="webkit-transform:scale(0.35,0.35); -moz-transform:scale(0.35,0.35); -ms-transform:scale(0.35,0.35); -o-transform:scale(0.35,0.35)">
 		</div>
-
+		<div id="right" style="position:center; margin-top:-475px; margin-left:575px; visibility:hidden">
+			<img src="images/intro/Checkmark.svg" style="webkit-transform:scale(0.35,0.35); -moz-transform:scale(0.35,0.35); -ms-transform:scale(0.35,0.35); -o-transform:scale(0.35,0.35)">
+		</div>
+		<div id="iiitmk_logo" style="position:center; margin-top:-800px; margin-left:-225px; visibility:hidden">
+			<img src="images/intro/iiitmk.png" style="webkit-transform:scale(0.20,0.20); -moz-transform:scale(0.20,0.20); -ms-transform:scale(0.20,0.20); -o-transform:scale(0.20,0.20)">
+		</div>
 	<div>
-	<script type="text/javascript">
-		$(function() {
-			var animationend='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-
-			$('#table').css('visibility','visible').addClass('animated slideInUp').one(animationend,function(){
-				$(this).removeClass('animated slideInUp');
-				$('#phone').css('visibility','visible').addClass('animated slideInLeft').one(animationend,function(){
-					$(this).removeClass('animated slideInLeft');
-					$('#laptop').css('visibility','visible').addClass('animated fadeInDown').one(animationend,function(){
-						$(this).removeClass('animated fadeInDown');
-						$('#tablet').css('visibility','visible').addClass('animated slideInRight').one(animationend,function(){
-							$(this).removeClass('animated slideInRight');
-							$('#cloud').css('visibility','visible').addClass('animated fadeInRight').one(animationend,function(){
-								$(this).removeClass('animated fadeInRight');
-								$('#connectInternet').css('visibility','visible').one(animationend,function(){
-									$('#virus_attack').css('visibility','visible').addClass('animated tada').one(animationend,function(){
-										$(this).removeClass('animated tada');
-										$('.path').css('stroke','none').css('fill','#FF0000');
-										$('#shaker').addClass('animated tada').one(animationend,function(){
-											$(this).removeClass('animated tada');
-											$('#connectInternet').addClass('animated flash').one(animationend,function(){
-												$(this).removeClass('animated flash').addClass('animated fadeOut').one(animationend,function(){
-													$(this).removeClass('animated fadeOut').css('visibility','hidden');
-													$('#cloud').animate({opacity: 0.5}, 250);
-													$('#cross').css('visibility','visible').addClass('animated fadeIn').one(animationend,function() {
-														$(this).removeClass('animated fadeIn');
-														$('#tablet').animate({opacity: 0.5}, 250);
-														$('#laptop').animate({opacity: 0.5}, 250);
-														$('#phone').animate({opacity: 0.5}, 250);
-														$('#table').animate({opacity: 0.5}, 250);
-														$('#cross').css('visibility','hidden');
-														$('#cloud').css('visibility','hidden');
-														$('#main').css('background','linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%')
-														$('#virus_attack').animate({marginTop: "+=100"}, 1000);
-														$('#virus_attack').animate({marginLeft: "+=350"}, 1000);
-														$('#virus_attack').css({
-															'-webkit-animation-iteration-count': 'infinite',
-															'-moz-animation-iteration-count': 'infinite',
-															'-ms-animation-iteration-count': 'infinite',
-															'-o-animation-iteration-count': 'infinite'
-														});
-														$('#virus_attack').addClass('animated pulse');
-													});
-												});
-											});
-										});
-									});
-								});
-							});
-						})
-					});
-				});
-			});
-
-		});
-	</script>
-	<style type="text/css">
-		#table, #phone, #laptop, #tablet, #connectInternet, #table, #virus_attack, #cross {
-			-webkit-animation-duration: 1.25s;
-			-moz-animation-duration: 1.25s;
-			-ms-animation-duration: 1.25s;
-			-o-animation-duration: 1.25s;
-
-			-webkit-animation-delay: -0.5s;
-			-moz-animation-delay: -0.5s;
-			-ms-animation-delay: -0.5s;
-			-o-animation-delay: -0.5s;
-		}
-		#cloud, #virus_attack {
-			-webkit-animation-delay: 0.5s;
-			-moz-animation-delay: 0.5s;
-			-ms-animation-delay: 0.5s;
-			-o-animation-delay: 0.5s;
-		}
-		.path {
-			stroke-dasharray: 0;
-			animation: dash 0.5s linear alternate;
-			animation-duration: 2s;
-			animation-delay: 4s;
-		}
-		@keyframes dash {
-			from {
-				stroke-dasharray: 0 500;
-			}
-			to {
-				stroke-dasharray: 500 0;
-			}
-		}
-	</style>
 </body>
 </html>
