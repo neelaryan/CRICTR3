@@ -9,10 +9,104 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <!-- modernizr enables HTML5 elements and feature detects -->
   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 </head>
 
-<body>
+<body onload="play();">
   <div id="main">		
+
+  	<div id="boxes">
+		<div id="dialog" class="window">
+    		<iframe src="intro.html" seamless="" height="500" width="1010" scrolling="no" ></iframe>
+		</div>
+		<div id="mask"></div>
+	</div>
+	<style type="text/css">
+		#mask {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 9000;
+			background-color: #000;
+			display: none;
+		}
+		#boxes .window {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1010px;
+			height: 500px;
+			display: none;
+			z-index: 9999;
+			padding: 2px;
+			border-radius: 1px;
+			text-align: center;
+		}
+		#boxes #dialog {
+			width: 1010px;
+			height: 500px;
+			padding: 1px;
+			background-color: #ffffff;
+			font-family: 'Segoe UI Light', sans-serif;
+			font-size: 15pt;
+		}
+		#aud {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {	
+
+			var id = '#dialog';
+
+			//Get the screen height and width
+			var maskHeight = $(document).height();
+			var maskWidth = $(window).width();
+
+			//Set heigth and width to mask to fill up the whole screen
+			$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+			//transition effect
+			$('#mask').fadeIn(500);	
+			$('#mask').fadeTo("slow",0.9);	
+
+			//Get the window height and width
+			var winH = $(window).height();
+			var winW = $(window).width();
+      
+			//Set the popup window to center
+			$(id).css('top',  winH/2-$(id).height()/2);
+			$(id).css('left', winW/2-$(id).width()/2);
+
+			//transition effect
+			$(id).fadeIn(2000); 	
+
+			/*//if close button is clicked
+			$('.window .close').click(function (e) {
+				//Cancel the link behavior
+				e.preventDefault();
+
+				$('#mask').hide();
+				$('.window').hide();
+			});*/
+
+			//if mask is clicked
+			$('#mask').click(function () {
+				$(this).hide();
+				$('.window').hide();
+			});
+
+		});
+		function play(){
+    		var snd=document.getElementById('aud');
+	    	canPlayMP3 = (typeof snd.canPlayType === "function" && snd.canPlayType("audio/mpeg") !== "");
+	    	snd.src='introaudio.mp3';
+	    	snd.load();
+	    	snd.play();
+		}
+	</script>
+
+<audio id="aud" preload="auto" src="introaudio.mp3"></audio>
 
     <header>
 	  <div id="strapline">

@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Intro Animation</title>
+	<title>Intro Anim</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/animate.css/animate.css">
+	<script type="text/javascript" src="bower_components/wow/dist/wow.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/progressbar.js/dist/progressbar.js"></script>
+	<script type="text/javascript" src="js/intro.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/intro.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<script src="js/intro.js"></script>
+	<script type="text/javascript" src="bower_components/jquery-bgswitcher/jquery.bgswitcher.js"></script>
 </head>
 <body>
-	<div id="main" style="height:450px; width:1010px; background-color:#99CCFF; margin-left:auto; margin-right:auto; overflow:hidden">
-		
-		<div id="shaker" style="visibility:hidden">
+	<script>
+        new WOW().init();
+    </script>
+
+    <div id="main">
+
+    	<div id="cloud" class="wow fadeIn" data-wow-duration="1.5s">
+			<img src="images/intro/cloud-4.1.png"/>
 		</div>
-		<div id="table" style="visibility:hidden">
-			<svg height="450" width="1010">
-				<ellipse cx="505" cy="460" rx="325" ry="170" style="fill:#6699FF;stroke:#0066FF;stroke-width:0.5" />
-			</svg> 
+
+		<div id="laptop" class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="-0.5s">
+			<img src="images/intro/laptop.svg"/>
 		</div>
-		<div id="phone" style="position:center; margin-top:-100px; margin-left:250px; color:#FFFFFF; visibility:hidden">
-			<span class="fa fa-mobile fa-5x" style="-webkit-transform:rotate(-5deg); -moz-transform:rotate(-5deg); -ms-transform:rotate(-5deg); -o-transform:rotate(-5deg)"></span>
+
+		<div id="phone" class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="-0.5s">
+			<img src="images/intro/fa-mobile-phone.png"/>
 		</div>
-		<div id="laptop" style="position:center; margin-top:-300px; margin-left:300px; visibility:hidden">
-			<img src="images/intro/Laptop_01.svg"/>
+
+		<div id="tablet" class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="-0.5s">
+			<img src="images/intro/tablet-1.1.png"/>
 		</div>
-		<div id="tablet" style="position:center; margin-top:-390px; margin-left:365px; visibility:hidden">
-			<img src="images/intro/tablet-1.1.svg" style="-webkit-transform:rotate(10deg) scale(0.15,0.15); -moz-transform:rotate(10deg) scale(0.15,0.15); -ms-transform:rotate(10deg) scale(0.15,0.15); -o-transform:rotate(10deg) scale(0.15,0.15)" />
+
+		<div id="arrow_up" class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
+			<img src="images/intro/arrow-thin-up.png"/>
 		</div>
-		<div id="cloud" style="position:center; margin-top: -875px; margin-left: 550px; visibility:hidden">
-			<img src="images/intro/cloud-4.svg" style="-webkit-transform:scale(0.45,0.45); -moz-transform:scale(0.45,0.45); -ms-transform:scale(0.45,0.45); -o-transform:scale(0.45,0.45)" />
+
+		<div id="arrow_right" class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
+			<img src="images/intro/arrow-right-c.png"/>
 		</div>
-		<div id="connectInternet" style="visibility:hidden">
-			<svg height="450" width="1010" style="margin-top:-400px; margin-left:-95px; webkit-transform:scale(0.81,0.81); -moz-transform:scale(0.81,0.81); -ms-transform:scale(0.81,0.81); -o-transform:scale(0.81,0.81)">
-				<path class="path" d="M 319.52045,453.7464 C 317.0342,450.99441 315,448.1082 315,447.33259 c 0,-0.77562 -3.9375,-8.29403 -8.75,-16.70759 -4.8125,-8.41356 -8.75,-15.9981 -8.75,-16.85454 0,-0.85642 -1.33069,-4.16451 -2.95709,-7.3513 -1.6264,-3.18678 -4.57952,-9.09528 -6.5625,-13.13 -1.98297,-4.0347 -4.28242,-8.5568 -5.10988,-10.04911 -0.82745,-1.4923 -3.00223,-8.31618 -4.83283,-15.16416 -3.06126,-11.45167 -3.37821,-14.94239 -3.94941,-43.49645 -0.4238,-21.18592 -0.15125,-33.49239 0.85819,-38.75 1.98915,-10.36037 8.65588,-28.12927 12.18917,-32.48785 1.57539,-1.94336 2.86435,-4.09203 2.86435,-4.77478 0,-0.68275 1.62763,-3.60705 3.61695,-6.49842 1.98931,-2.89138 5.42068,-8.33648 7.62524,-12.10021 5.96195,-10.17854 10.80957,-16.54262 21.7332,-28.53187 5.41772,-5.94622 10.4355,-12.08925 11.15061,-13.65117 C 336.61876,182.3406 378.0402,150 382.52072,150 c 0.76495,0 4.02635,-1.06211 7.24756,-2.36025 22.88899,-9.22423 39.50901,-14.39336 53.35672,-16.59494 4.8125,-0.76511 10.19612,-2.40476 11.96362,-3.64366 2.18148,-1.52909 8.40433,-2.88735 19.375,-4.229 8.88875,-1.08704 20.66138,-2.63064 26.16138,-3.43022 10.32255,-1.50068 144.31041,-1.97401 252.5,-0.89199 45.33061,0.45336 54.12165,0.23701 64.375,-1.58429 34.01189,-6.04149 47.05755,-9.95733 59.3324,-17.809463 9.75145,-6.237922 16.9176,-5.729222 16.9176,1.200923 0,2.45691 -4.6436,8.09289 -6.6679,8.09289 -0.48498,0 -3.19183,1.45826 -6.0152,3.24059 -10.48565,6.6193 -25.90068,11.0469 -57.3169,16.46292 -13.70461,2.36261 -47.28375,2.52823 -191.25,0.94326 -64.21448,-0.70695 -93.23299,-0.55551 -111.25,0.5806 -13.40625,0.84538 -24.9375,1.96787 -25.625,2.49443 -0.6875,0.52655 -8.21071,1.60366 -16.71826,2.39357 -11.23754,1.04339 -16.36584,2.06558 -18.75,3.73728 -1.80495,1.26557 -7.21924,2.92705 -12.03174,3.69216 -13.84771,2.20158 -30.46773,7.37071 -53.35672,16.59494 -3.22121,1.29814 -6.48261,2.36025 -7.24756,2.36025 -4.16847,0 -28.23903,18.34541 -39.58162,30.1672 -19.0575,19.86265 -28.02586,30.8814 -35.44691,43.55097 -2.20457,3.76374 -5.63593,9.20884 -7.62524,12.10022 -1.98933,2.89137 -3.61695,5.81567 -3.61695,6.49842 0,0.68275 -1.28896,2.83141 -2.86435,4.77478 -3.7984,4.68562 -10.28478,22.59037 -12.18803,33.64337 -1.0334,6.00145 -1.30775,16.89034 -0.85032,33.75 0.58471,21.5516 1.11747,26.56004 3.97202,37.34093 1.8132,6.84798 3.97375,13.67186 4.8012,15.16416 0.82747,1.49231 3.12692,6.01441 5.10989,10.04911 1.98298,4.03472 4.9361,9.94321 6.5625,13.13 1.6264,3.18679 2.95709,6.49488 2.95709,7.3513 0,0.85644 3.9375,8.44098 8.75,16.85454 4.8125,8.41356 8.75,15.82836 8.75,16.47733 0,0.64897 1.6875,2.79667 3.75,4.77267 5.88054,5.63391 4.51167,11.875 -2.60455,11.875 -2.32784,0 -4.73809,-1.53142 -7.875,-5.0036 z M 869,431 c -0.825,-0.825 -1.5,-2.86034 -1.5,-4.52296 0,-4.16504 13.66247,-17.35557 24.58215,-23.733 4.70672,-2.74888 9.6259,-6.17833 10.9315,-7.621 1.3056,-1.44266 3.05123,-2.62304 3.87918,-2.62304 2.01706,0 10.79211,-7.14432 14.96071,-12.18048 3.93406,-4.75277 7.25996,-13.29172 10.59224,-27.19452 3.31491,-13.83036 3.65935,-16.3388 5.01045,-36.4892 1.02537,-15.29263 0.8554,-19.982 -1.23248,-34.001 -1.33205,-8.944 -2.78589,-22.33636 -3.23076,-29.76081 -0.70604,-11.78282 -0.46384,-14.61142 1.90507,-22.24899 4.10524,-13.23567 7.75228,-19.92911 11.11991,-20.40845 6.50532,-0.92595 8.58024,6.97723 4.14052,15.77075 -1.28783,2.55074 -3.25439,7.8105 -4.37014,11.68836 -2.27856,7.91935 -2.06023,12.49625 1.95944,41.07434 2.35256,16.72569 2.43465,19.91032 1.06327,41.25 -1.32311,20.58857 -2.28587,27.31915 -6.2582,43.75 -2.54569,10.52982 -6.16389,18.38535 -11.48115,24.92684 -3.84564,4.73105 -17.08165,15.07316 -19.29088,15.07316 -0.76635,0 -2.46423,1.1833 -3.77308,2.62955 -1.30884,1.44626 -4.91164,4.07244 -8.00622,5.83595 -9.37303,5.34143 -17.46899,11.89788 -20.01042,16.20529 C 878.17404,431.5005 876.7164,432.5 874.04216,432.5 872.09397,432.5 869.825,431.825 869,431 Z M 689.05372,238.55373 c -4.60355,-4.60356 0.35578,-14.29507 13.6868,-26.74671 9.46764,-8.84312 21.71224,-15.11428 38.7938,-19.86858 12.08785,-3.3644 12.33772,-3.38025 42.5,-2.69731 16.68738,0.37783 33.71568,1.01963 37.84068,1.42622 6.53093,0.64373 9.03437,0.17699 19.375,-3.61222 16.82333,-6.16473 21.17999,-8.1245 25.66356,-11.54429 10.8324,-8.26228 18.33629,1.29421 7.77394,9.9004 -5.742,4.67857 -9.02905,6.23794 -27.1875,12.89764 -11.6133,4.25922 -12.17803,4.33906 -25.625,3.62255 -33.43186,-1.78138 -61.18279,-2.08947 -66.75496,-0.7411 -16.90793,4.09141 -33.19871,10.61346 -36.52681,14.62358 -0.76964,0.92735 -2.38714,1.68609 -3.59444,1.68609 -2.39852,0 -12.10925,10.71454 -15.92529,17.57149 -2.56614,4.61102 -7.25977,6.24223 -10.01977,3.48224 z" stroke="#2F2F2F" 
-				stroke-width="3" fill="#414141" />
-			</svg>
+
+		<div id="arrow_left" class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
+			<img src="images/intro/arrow-left-c.png"/>
 		</div>
-		<div id="virus_attack" style="margin-top:-400px; margin-left:0px; visibility:hidden">
-			<img src="images/intro/computer-virus-character.svg" style="webkit-transform:scale(0.8,0.8); -moz-transform:scale(0.8,0.8); -ms-transform:scale(0.8,0.8); -o-transform:scale(0.8,0.8)">
+
+		<div id="progress1" class="wow progress">
 		</div>
-		<div id="cross" style="position:center; margin-top:-400px; margin-left:555px; visibility:hidden">
-			<img src="images/intro/cross.svg" style="webkit-transform:scale(0.35,0.35); -moz-transform:scale(0.35,0.35); -ms-transform:scale(0.35,0.35); -o-transform:scale(0.35,0.35)">
+
+		<div id="progress2" class="wow progress">
 		</div>
-		<div id="right" style="position:center; margin-top:-475px; margin-left:575px; visibility:hidden">
-			<img src="images/intro/Checkmark.svg" style="webkit-transform:scale(0.35,0.35); -moz-transform:scale(0.35,0.35); -ms-transform:scale(0.35,0.35); -o-transform:scale(0.35,0.35)">
+
+		<div id="progress3" class="wow progress">
 		</div>
-		<div id="iiitmk_logo" style="position:center; margin-top:-800px; margin-left:-225px; visibility:hidden">
-			<img src="images/intro/iiitmk.png" style="webkit-transform:scale(0.20,0.20); -moz-transform:scale(0.20,0.20); -ms-transform:scale(0.20,0.20); -o-transform:scale(0.20,0.20)">
+
+		<div id="lock_left" class="wow fadeIn slideInLeft" data-wow-delay="8s">
+			<img src="images/intro/lock-circled-l.png"/>
 		</div>
-	<div>
+
+		<div id="lock_right" class="wow fadeIn slideInRight" data-wow-delay="8s">
+			<img src="images/intro/lock-circled-r.png"/>
+		</div>
+
+		<div id="iiitmk_logo" class="wow zoomIn" data-wow-delay="21s">
+			<img src="images/intro/iiitmk.png"/>
+		</div>
+
+		<div id="name">
+			<h1 class="wow slideInRight" data-wow-delay="22s">Center for Research</h1>
+			<h1 class="wow slideInRight" data-wow-delay="22.25s">and Innovation in</h1>
+			<h1 class="wow slideInRight" data-wow-delay="22.5s">Cyber Threat Resilience</h1>
+		</div>
+	</div>
 </body>
 </html>

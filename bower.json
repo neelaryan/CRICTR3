@@ -1,0 +1,30 @@
+{
+  "name": "CRICTR4",
+  "version": "0.0.1",
+  "authors": [
+    "Arannya Mukherjee <mukherjee.arannya@gmail.com>"
+  ],
+  "description": "CTR Lab Website",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "None"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "wow": "wowjs#~1.1.2",
+    "animate.css": "~3.4.0",
+    "aterrien/jQuery-Knob": "~1.2.11"
+  }
+}
